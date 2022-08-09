@@ -36,20 +36,15 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                       value = 1, min = 0
                     ))
                   ),
-                  
-                  
                   # sidebarPanel
                   mainPanel(
                     h1("Resultado"),
                     h4("As caracteristicas dessa anuidade são:"),
                     verbatimTextOutput("txtout2"),
-                    
+                     # nolint # nolint
                     h4("O custo dessa anuidade é:"),
                     verbatimTextOutput("txtout"),
-                    
-                    
                   ) # mainPanel
-                  
                 )) # navbarPage
 # fluidPage
 
@@ -67,7 +62,6 @@ server <- function(input, output, session) {
     vals$Z <-
       ifelse(input$H == 1, vals$Z <-
                "Antecipada", vals$Z <- "Postecipada")
-    
   })
   output$txtout <- renderText({
     paste(vals$P * annuity(
