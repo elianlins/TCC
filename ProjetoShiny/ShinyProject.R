@@ -1,5 +1,3 @@
-teste
-
 library(shiny)
 library(shinythemes)
 library(lifecontingencies)
